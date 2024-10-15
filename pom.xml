@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>memo</groupId>
+  <artifactId>memo</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>3.0.5</version>
+				<extensions>true</extensions>
+			</plugin>
+			
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.2</version>
+				<executions>
+					<execution>				
+						<id>copy-dependencies</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/lib</outputDirectory>
+							<includeScope>runtime</includeScope>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+    <repositories>
+		<repository>
+          <id>eclipse</id>
+          <layout>p2</layout>
+          <url>https://download.eclipse.org/releases/2023-06</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+    	<dependency>
+	        <groupId>org.hibernate</groupId>
+	        <artifactId>hibernate-core</artifactId>
+	        <version>5.6.1.Final</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>javax.persistence</groupId>
+	        <artifactId>javax.persistence-api</artifactId>
+	        <version>2.2</version>
+	    </dependency>
+    </dependencies>
+    
+</project>

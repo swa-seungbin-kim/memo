@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_BxaXACerEeWxCPrV0pAZQQ">
+  <imports xsi:type="menu:PopupMenu" xmi:id="_heROIIoLEe-9d7n_Y_dwKg" elementId="popup"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_EI7oACerEeWxCPrV0pAZQQ" featurename="descriptors" parentElementId="xpath:/">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_KMklcCerEeWxCPrV0pAZQQ" elementId="memo.memoview" label="Memo View" iconURI="platform:/plugin/memo/icons/task-memory-pin.gif" tooltip="" category="Memo" closeable="true" contributionURI="bundleclass://memo/memo.view.MemoView">
+      <tags>View</tags>
+      <tags>categoryTag:Memo</tags>
+      <toolbar xmi:id="_w-g0oIBiEe-rOKktBmf_Hg" elementId="memo.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_zmm4QIBiEe-rOKktBmf_Hg" elementId="memo.handledtoolitem.newmemo" label="New Memo" iconURI="platform:/plugin/memo/icons/new_con.png" tooltip="&#xba54;&#xbaa8;&#xc0dd;&#xc131;" command="_myBiUINeEe-w6dLI1G2Pqg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5k6p4IO8Ee-w6dLI1G2Pqg" elementId="memo.handledtoolitem.deletememo" label="Delete Memo" iconURI="platform:/plugin/memo/icons/remove.gif" tooltip="&#xba54;&#xbaa8;&#xc0ad;&#xc81c;" command="_WjqRIIO9Ee-w6dLI1G2Pqg">
+          <parameters xmi:id="_dVOPkInTEe-9d7n_Y_dwKg" elementId="memo.parameter.delete" name="memo.command.parameter.delete" value="TOOLBAR"/>
+        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_M8cq4IB-Ee-ot5dl5rwf7A" elementId="memo.handledtoolitem.preferences" label="Preferences" iconURI="platform:/plugin/memo/icons/settings.png" tooltip="&#xc124;&#xc815;" command="_kyooAINfEe-w6dLI1G2Pqg"/>
+      </toolbar>
+    </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_juN9EIB_Ee-ot5dl5rwf7A" elementId="memo.memotable" label="Memo Table View" iconURI="platform:/plugin/memo/icons/table_obj.gif" category="Memo" closeable="true" contributionURI="bundleclass://memo/memo.view.MemoTableView">
+      <menus xsi:type="menu:PopupMenu" xmi:id="_98ORwInlEe-9d7n_Y_dwKg" elementId="memo.popupmenu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_eJkPEIn-Ee-9d7n_Y_dwKg" elementId="memo.handledmenuitem.openmemo" label="Open" tooltip="&#xba54;&#xbaa8; &#xc5f4;&#xae30;" command="_VvMDwIn-Ee-9d7n_Y_dwKg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nq-loInXEe-9d7n_Y_dwKg" elementId="memo.handledmenuitem.deletememo" label="Delete" tooltip="&#xba54;&#xbaa8;&#xc0ad;&#xc81c;" command="_WjqRIIO9Ee-w6dLI1G2Pqg">
+          <parameters xmi:id="_yQ73sInXEe-9d7n_Y_dwKg" elementId="memo.parameter.delete" name="memo.command.parameter.delete" value="TABLE"/>
+        </children>
+      </menus>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_evlV4INeEe-w6dLI1G2Pqg" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_myBiUINeEe-w6dLI1G2Pqg" elementId="memo.command.newmemo" commandName="New Memo"/>
+    <elements xsi:type="commands:Command" xmi:id="_kyooAINfEe-w6dLI1G2Pqg" elementId="memo.command.openpreferences" commandName="Open Preferences"/>
+    <elements xsi:type="commands:Command" xmi:id="_WjqRIIO9Ee-w6dLI1G2Pqg" elementId="memo.command.deletememo" commandName="Delete Memo">
+      <parameters xmi:id="_ZNgzUInTEe-9d7n_Y_dwKg" elementId="memo.command.parameter.delete" name="Delete Parameter"/>
+    </elements>
+    <elements xsi:type="commands:Command" xmi:id="_VvMDwIn-Ee-9d7n_Y_dwKg" elementId="memo.command.openmemo" commandName="Open Memo"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_IymzsIPLEe-w6dLI1G2Pqg" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_BqOT0INfEe-w6dLI1G2Pqg" elementId="memo.handler.newmemo" contributionURI="bundleclass://memo/memo.handler.NewMemo" command="_myBiUINeEe-w6dLI1G2Pqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_1KDiYINfEe-w6dLI1G2Pqg" elementId="memo.handler.openpreferences" contributionURI="bundleclass://memo/memo.handler.OpenPreferences" command="_kyooAINfEe-w6dLI1G2Pqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_evHPoIO9Ee-w6dLI1G2Pqg" elementId="memo.handler.deletememo" contributionURI="bundleclass://memo/memo.handler.DeleteMemo" command="_WjqRIIO9Ee-w6dLI1G2Pqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_YjL1YIn-Ee-9d7n_Y_dwKg" elementId="memo.handler.openmemo" contributionURI="bundleclass://memo/memo.handler.OpenMemo" command="_VvMDwIn-Ee-9d7n_Y_dwKg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_R3rUEIPGEe-w6dLI1G2Pqg" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_TREv8IPGEe-w6dLI1G2Pqg" elementId="memo.menucontribution.popup" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_TqccwIPHEe-w6dLI1G2Pqg" elementId="memo.handledmenuitem.newmemo" label="&#xd504;&#xb85c;&#xc81d;&#xd2b8; &#xba54;&#xbaa8; &#xcd94;&#xac00;" iconURI="platform:/plugin/memo/icons/new_con.png" command="_myBiUINeEe-w6dLI1G2Pqg">
+        <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_GNwjQIPJEe-w6dLI1G2Pqg" contributionURI="bundleclass://memo/memo.evaluate.ProjectOrEmptySelectionExpression"/>
+      </children>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
