@@ -28,7 +28,7 @@ public class EditorWordSearch extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		
 		// 1. 에디터 내 선택된 문자 가져오기
-		String text = getSelecteText(event);
+		String text = getSelectedText(event);
 		if (text == null || text.isBlank()) {
 			return null;
 		}
@@ -54,7 +54,7 @@ public class EditorWordSearch extends AbstractHandler {
 	}
 	
 	
-	private String getSelecteText(ExecutionEvent event) {
+	private String getSelectedText(ExecutionEvent event) {
 		
 		IEditorPart activeEditor = HandlerUtil.getActiveEditor(event);
 		
